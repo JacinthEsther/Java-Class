@@ -21,33 +21,50 @@ public class PlayTicTacGame {
     }
 
     private static void ticTacGame() {
-        for (int i = 0; i < 4; i++) {
-            System.out.println("Player1.... choose your position between 1 and 9");
-            int position1 = userChoice.nextInt();
-            validatePosition[i] = position1;
+        boolean cellCheck = false;
+        for (int i = 0,j = 0; i + j < 9; i++,j++) {
+            while (!cellCheck) {
+                try {
+                    System.out.println("Player1.... choose your position between 1 and 9");
+                    int position1 = userChoice.nextInt();
+                    validatePosition[i] = position1;
+                    position1 = validate(position1);
+                    cellCheck=check(position1, player1.getPlayer());
+                    printBoard();
+                    if (checkForOAndX(Cell.X)) return;
+                    if (checkForOAndX(Cell.O)) return;
+                } catch (IllegalAccessException ex) {
+                    ex.getStackTrace();
+                }
+            }
 
-            position1 = validate(position1);
-            check(position1, player1.getPlayer());
-            printBoard();
-            if (checkForOAndX(Cell.X)) return;
-            if (checkForOAndX(Cell.O)) return;
-            System.out.println("Player2.... choose your position between 1 and 9");
-            int position2 = userChoice.nextInt();
-           // validatePosition[i] = position2;
-            position2 = validate(position2);
-            check(position2, player2.getPlayer());
-            printBoard();
-            if (checkForOAndX(Cell.X)) return;
-            if (checkForOAndX(Cell.O)) return;
-            if (i == 3 && !checkForOAndX(Cell.X) && !checkForOAndX(Cell.O)) System.out.println("Draw");
+            cellCheck=false;
 
+            while (!cellCheck){
+                try {
+                    System.out.println("Player2.... choose your position between 1 and 9");
+                    int position2 = userChoice.nextInt();
+                    position2 = validate(position2);
+                    validatePosition[j] = position2;
+                    cellCheck = check(position2, player2.getPlayer());
+                    printBoard();
+                    if (checkForOAndX(Cell.X)) return;
+                    if (checkForOAndX(Cell.O)) return;
+                }catch (IllegalAccessException ex){
+                    ex.getStackTrace();
+                }
+            }
+            cellCheck=false;
+        if (i + j== 9 && !checkForOAndX(Cell.X) && !checkForOAndX(Cell.O)) System.out.println("Draw");
         }
+
     }
 
 
 
     private static void playerChoiceOfMarker() {
         System.out.println("Choose a marker (either X or O)");
+
         String marker = userChoice.next();
         while (!marker.toUpperCase().equals("X") && !marker.toUpperCase().equals("O")) {
             System.out.println("Choose a marker (either X or O)");
@@ -106,20 +123,81 @@ public class PlayTicTacGame {
         return position;
     }
 
-    private static void check(int position, Cell player) {
-
+    private static boolean check(int position, Cell player) throws IllegalAccessException {
         switch (position) {
-            case 1 -> board.getBoard()[0][0] = String.valueOf(player);
-            case 2 -> board.getBoard()[0][1] = String.valueOf(player);
-            case 3 -> board.getBoard()[0][2] = String.valueOf(player);
-            case 4 -> board.getBoard()[1][0] = String.valueOf(player);
-            case 5 -> board.getBoard()[1][1] = String.valueOf(player);
-            case 6 -> board.getBoard()[1][2] = String.valueOf(player);
-            case 7 -> board.getBoard()[2][0] = String.valueOf(player);
-            case 8 -> board.getBoard()[2][1] = String.valueOf(player);
-            case 9 -> board.getBoard()[2][2] = String.valueOf(player);
-        }
+            case 1 -> {
+                if (!checkCell(board.getBoard()[0][0])) throw new IllegalAccessException("cell played in");
+                else {
+                    board.getBoard()[0][0] = String.valueOf(player);
+                    return true;
+                }
 
+            }
+            case 2 -> {
+                if (!checkCell(board.getBoard()[0][1])) throw new IllegalAccessException("cell played in");
+                else {
+                    board.getBoard()[0][1] = String.valueOf(player);
+                    return true;
+                }
+
+            }
+            case 3 -> {
+                if (!checkCell(board.getBoard()[0][2])) throw new IllegalAccessException("cell played in");
+                else {
+                    board.getBoard()[0][2] = String.valueOf(player);
+                    return true;
+                }
+
+            }
+            case 4 -> {
+                if (!checkCell(board.getBoard()[1][0])) throw new IllegalAccessException("cell played in");
+                else {
+                    board.getBoard()[1][0] = String.valueOf(player);
+                    return true;
+                }
+            }
+
+            case 5 -> {
+                if (!checkCell(board.getBoard()[1][1])) throw new IllegalAccessException("cell played in");
+                else board.getBoard()[1][1] = String.valueOf(player);
+                return true;
+            }
+            case 6 -> {
+                if (!checkCell(board.getBoard()[1][2])) throw new IllegalAccessException("cell played in");
+                else{
+                    board.getBoard()[1][2] = String.valueOf(player);
+                    return true;
+                }
+            }
+
+            case 7 -> {
+                if (!checkCell(board.getBoard()[2][0])) throw new IllegalAccessException("cell played in");
+                else {
+                    board.getBoard()[2][0] = String.valueOf(player);
+                    return true;
+                }
+            }
+            case 8 -> {
+                if (!checkCell(board.getBoard()[2][1])) throw new IllegalAccessException("cell played in");
+                else {
+                    board.getBoard()[2][1] = String.valueOf(player);
+                    return true;
+                }
+            }
+            case 9 -> {
+                if (!checkCell(board.getBoard()[2][2])) throw new IllegalAccessException("cell played in");
+                else {
+                    board.getBoard()[2][2] = String.valueOf(player);
+                    return true;
+                }
+
+            }
+        }
+        return false;
+    }
+
+    private static boolean checkCell(String valueInCell){
+        return valueInCell.equals(Cell.EMPTY.toString());
     }
 
     private static void printBoard() {
