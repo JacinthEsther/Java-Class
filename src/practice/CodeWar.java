@@ -28,8 +28,6 @@ public class CodeWar {
           String []newUserInput=  userInput.split("([~!#@$%^&*()_ +=-])");
           StringBuilder sb = new StringBuilder();
         for (int i = 0; i < newUserInput.length; i++) {
-//            temp = newUserInput[0].substring(0, 1).toLowerCase() + newUserInput[i].substring(1);
-//            System.out.println(newUserInput[i]);
             if(newUserInput[i].matches(newUserInput[0])){
 
                 temp = newUserInput[0].replaceFirst("[A-Z]",newUserInput[0].substring(0, 1).toLowerCase() );

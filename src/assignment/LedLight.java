@@ -14,7 +14,7 @@ public class LedLight {
         System.out.println("Enter eight digits in 0's and 1's");
         String digit = input.nextLine();
         Integer.parseInt(digit);
-        if (digit.length() == 8) {
+         if (digit.length() == 8) {
             int firstDigit = (Integer.parseInt(digit) / 10000000);
             int secondDigit = (Integer.parseInt(digit) % 10000000) / 1000000;
             int thirdDigit = (Integer.parseInt(digit) % 1000000) / 100000;
