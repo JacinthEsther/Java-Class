@@ -11,18 +11,18 @@ public class Integer{
         int digit = input.nextInt();
 
 
-        int firstdigit= (digit / 10000);
-        System.out.println(firstdigit);
-        int seconddigit = (digit % 10000)/1000;
-        System.out.println(seconddigit);
-        int thirddigit = (digit % 1000)/ 100;
-        System.out.println(thirddigit);
-        int fourthdigit = (digit% 100)/ 10;
-        System.out.println(fourthdigit);
-        int fifthdigit=(digit % 10)/ 1;
-        System.out.println(fifthdigit);
+        int firstDigit= (digit / 10000);
+        System.out.println(firstDigit);
+        int secondDigit = (digit % 10000)/1000;
+        System.out.println(secondDigit);
+        int thirdDigit = (digit % 1000)/ 100;
+        System.out.println(thirdDigit);
+        int fourthDigit = (digit% 100)/ 10;
+        System.out.println(fourthDigit);
+        int fifthDigit=(digit % 10);
+        System.out.println(fifthDigit);
 
-        System.out.printf("%d  %d  %d  %d  %d", firstdigit, seconddigit, thirddigit, fourthdigit, fifthdigit);
+        System.out.printf("%d  %d  %d  %d  %d", firstDigit, secondDigit, thirdDigit, fourthDigit, fifthDigit);
 
     }
 }
