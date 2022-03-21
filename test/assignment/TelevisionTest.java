@@ -8,7 +8,7 @@ public class  TelevisionTest {
 
 
     @Test
-            public void iCanTurnOnTheTelevisionTest() {
+    public void iCanTurnOnTheTelevisionTest() {
         Television lG = new Television("lG");
         assertFalse(lG.isOn());
 

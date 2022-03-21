@@ -10,7 +10,7 @@ public class TwelveDaysOfChristmas2 {
                 case 2 -> System.out.println("on the "+i + "nd day of Christmas, my true love sent to me");
                 case 1-> System.out.println("on the "+i + "st day of Christmas, my true love sent to me");
             }
-            for (int j = i; j > 0; j--) {
+            for (int j = i; true; j--) {
                 switch (j){
                     case 12 : System.out.println("Twelve, Drummers Drumming");
                     case 11 : System.out.println("Eleven, Pipers Piping");
