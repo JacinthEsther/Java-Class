@@ -3,7 +3,7 @@ package chapterSix;
 import java.security.SecureRandom;
 import java.util.Scanner;
 
-public class MultiplicationQuiz2 {
+public class  MultiplicationQuiz2 {
     private static final SecureRandom input = new SecureRandom();
        private static final Scanner check = new Scanner(System.in);
     public static void main(String[] args) {
@@ -41,7 +41,7 @@ public class MultiplicationQuiz2 {
             userAnswer = check.nextInt();
             if (userAnswer == result) {
                 printCorrectResponse();
-                promptUserForMoreQuestions();
+                promptUserForMoreQuestion();
             }
             else {
                 incorrectResponse();
@@ -49,7 +49,7 @@ public class MultiplicationQuiz2 {
        }
 
     }
-    private static void promptUserForMoreQuestions(){
+    private static void promptUserForMoreQuestion(){
         System.out.println("press 1 to continue and 2 to end game");
         int response = check.nextInt();
         if (response == 1){

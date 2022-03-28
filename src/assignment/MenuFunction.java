@@ -39,7 +39,7 @@ public class MenuFunction {
                         9. Speed dial
                         10. Voice tags
                                                 
-                        please select a option
+                        please select an option
                         """;
 
                 System.out.println(phonebook);
