@@ -18,8 +18,7 @@ public class Multiples{
 
             System.out.printf( "%d is a multiple of the %d", firstNumber, secondNumber);
 
-        else if (thirdNumber != 0)
-            System.out.printf( "%d is not a multiple of the %d", firstNumber, secondNumber);
+        else System.out.printf( "%d is not a multiple of the %d", firstNumber, secondNumber);
 
     }
 }

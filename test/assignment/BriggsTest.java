@@ -41,6 +41,8 @@ public class BriggsTest {
                 "B", "B", "A", "B", "B", "A", "A", "B"};
         PersonalityTrait personalityTrait = trait.getIntrovertOrExtrovert(response);
         assertEquals(INTROVERT, personalityTrait);
+
+        
     }
 
     @Test
@@ -50,6 +52,7 @@ public class BriggsTest {
                 "A", "B", "A", "A", "B", "A", "A", "A"};
         PersonalityTrait personalityTrait = trait.getIntrovertOrExtrovert(response);
         assertEquals(EXTROVERT, personalityTrait);
+
     }
 
 

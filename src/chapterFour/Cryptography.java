@@ -28,7 +28,6 @@ public class Cryptography {
         secondDigit2 = fourthDigit;
         fourthDigit2 = secondDigit;
 
-
         System.out.print(firstDigit2);
         System.out.print(secondDigit2);
         System.out.print(thirdDigit2);
