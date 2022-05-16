@@ -12,7 +12,10 @@ public class Quiz {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 
+        renderQuestion();
+    }
 
+    private static void renderQuestion() {
         for (int i = 0; i < 10; i++) {
                 int render = 1+ randomGenerator.nextInt(4);
             switch(render){
@@ -26,7 +29,7 @@ public class Quiz {
         System.out.println("you failed "+ fail);
     }
 
-private static void generateRandomNumbers(){
+    private static void generateRandomNumbers(){
     x = 1+ randomGenerator.nextInt(10);
     y = 1+ randomGenerator.nextInt(10);
 }
