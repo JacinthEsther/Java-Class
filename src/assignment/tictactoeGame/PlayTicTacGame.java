@@ -14,7 +14,6 @@ public class PlayTicTacGame {
     private static final Scanner userChoice = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println(Arrays.deepToString(board.getBoard()));
         playerChoiceOfMarker();
 
         ticTacGame();
